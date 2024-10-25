@@ -21,6 +21,7 @@ html {
     background-color: #000;
     height: 46.5px;
     z-index: 1;
+
 }
 
 #nav li {
@@ -74,16 +75,29 @@ html {
     background-color: #ccc !important;
 }
 
+#header .mobile-menu-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#header .mobile-menu-btn,
 #header .search-btn {
     float: right;
     padding: 0 22px;
     cursor: pointer;
-}
-
-#header .search-icon {
     color: #fff;
     font-size: 18px;
     line-height: 46.5px;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+#header .search-icon {
+    
 }
 
 #header .search-btn:hover {
@@ -478,7 +492,9 @@ html {
 /* RESPONSIVE */
 /* PC */
 @media (min-width: 1024px) {
-
+    .mobile-menu-btn {
+        display: none;
+    }
 }
 
 /* Tablet */
@@ -491,13 +507,45 @@ html {
         padding-left: 16px;
         padding-right: 16px;
     }
+
+    .mobile-menu-btn {
+        display: none;
+    }
 }
 
 /* Mobile */
 @media (max-width: 739px) {
-    #main {
-        max-width: 739px;
+    #header {
+        overflow: hidden;
     }
+
+    #nav > li {
+        display: block;
+    }
+
+    #nav > li:first-child {
+        display: inline-block;
+    }
+
+    #header .search-btn {
+        display: none;
+    }
+
+    #nav {
+        display: block;
+    }
+
+    #nav .subnav {
+        position: initial;
+        background-color: #333;
+    }
+
+    #nav .subnav a {
+        color: #fff;
+        padding: 0 41px;
+    }
+
+
 }
 
 
